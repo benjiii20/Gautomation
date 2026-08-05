@@ -799,7 +799,7 @@ textarea:focus {
 @media (max-width: 640px) {
   /* Tighter section spacing on mobile */
   :root {
-    --section-pad: 56px;
+    --section-pad: 52px;
   }
 
   /* ── Mobile nav drawer ── */
@@ -871,10 +871,18 @@ textarea:focus {
   /* ── Hero ── */
   .hero-inner {
     max-width: 100%;
+    /* Reduce top padding so content isn't buried below the fixed header */
+    padding: 32px 0 52px;
   }
 
   .hero-headline {
-    font-size: clamp(2rem, 10vw, 2.8rem);
+    font-size: clamp(2.1rem, 10.5vw, 2.9rem);
+  }
+
+  /* Remove forced line breaks in headings — let text reflow naturally */
+  .hero-headline br,
+  .section-heading br {
+    display: none;
   }
 
   /* Stack buttons full-width on mobile */
@@ -907,20 +915,38 @@ textarea:focus {
   /* ── Services ── */
   .services-grid {
     grid-template-columns: 1fr;
-    margin-top: 32px;
-    gap: 14px;
+    margin-top: 28px;
+    gap: 12px;
   }
 
   .service-card {
-    padding: 26px 22px;
+    padding: 24px 20px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
   }
 
   /* ── About ── */
+  .about-inner {
+    gap: 32px;
+  }
+
   .about-stats {
     flex-direction: column;
   }
 
+  .stat-number {
+    font-size: 2rem;
+  }
+
   /* ── Contact ── */
+  .contact-inner {
+    gap: 36px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
