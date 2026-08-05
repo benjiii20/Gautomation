@@ -476,6 +476,12 @@ body.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* 5th card spans both columns but stays half-width so it doesn't stretch */
+.service-card--wide {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 10px);
+}
+
 .service-icon {
   width: 46px;
   height: 46px;
@@ -921,6 +927,10 @@ textarea:focus {
 
   .service-card {
     padding: 24px 20px;
+  }
+
+  .service-card--wide {
+    max-width: 100%;
   }
 
   .service-icon {
