@@ -150,15 +150,15 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(150deg, #2fc0b0 0%, #1f9d8f 100%);
-  color: #041412;
+  background: var(--accent-teal);
+  color: #08100f;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(150deg, #38d4c4 0%, #2ab3a4 100%);
-  color: #041412;
+  background: #33cdbf;
+  color: #08100f;
   transform: translateY(-1px);
-  box-shadow: 0 4px 24px rgba(43, 179, 163, 0.22);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary:active {
@@ -190,9 +190,7 @@ img {
    SECTION LABELS & HEADINGS
 =========================== */
 .section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 500;
@@ -202,20 +200,11 @@ img {
   margin-bottom: 14px;
 }
 
-.section-label::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: var(--accent-teal);
-  flex-shrink: 0;
-}
-
 .section-heading {
-  font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.7rem, 3.5vw, 2.65rem);
   margin-bottom: 28px;
   max-width: 680px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* ===========================
@@ -415,10 +404,10 @@ body.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 .hero-headline {
   font-size: clamp(2.8rem, 7.5vw, 5.5rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #f0f2f4;
 }
 
 .hero-tagline {
@@ -431,10 +420,10 @@ body.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 
 .hero-sub {
   font-size: clamp(1rem, 1.5vw, 1.175rem);
-  color: #8c9199;
+  color: var(--text-secondary);
   max-width: 600px;
   margin-bottom: 44px;
-  line-height: 1.78;
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -471,36 +460,20 @@ body.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   margin-top: 52px;
-  counter-reset: service-counter;
 }
 
 .service-card {
-  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 36px 32px;
-  counter-increment: service-counter;
   transition: transform var(--t), border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card::after {
-  content: "0" counter(service-counter);
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-family: var(--font-heading);
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  opacity: 0.35;
-  letter-spacing: 0.08em;
 }
 
 .service-card:hover {
   transform: translateY(-3px);
   border-color: var(--border-hover);
-  box-shadow: inset 3px 0 0 var(--accent-teal), 0 14px 44px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* 5th card spans both columns but stays half-width so it doesn't stretch */
@@ -586,7 +559,6 @@ body.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-left: 3px solid rgba(43, 179, 163, 0.35);
   border-radius: var(--radius-lg);
   padding: 26px 30px;
   transition: border-color var(--t), transform var(--t);
