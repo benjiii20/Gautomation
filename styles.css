@@ -876,14 +876,33 @@ textarea:focus {
   }
 
   /* ── Hero ── */
+  #hero {
+    min-height: unset;
+    align-items: flex-start;
+  }
+
   .hero-inner {
     max-width: 100%;
-    /* Reduce top padding so content isn't buried below the fixed header */
-    padding: 32px 0 52px;
+    padding: 36px 0 56px;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 16px;
   }
 
   .hero-headline {
-    font-size: clamp(2.1rem, 10.5vw, 2.9rem);
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    margin-bottom: 14px;
+  }
+
+  .hero-tagline {
+    margin-bottom: 16px;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+    line-height: 1.8;
   }
 
   /* Remove forced line breaks in headings — let text reflow naturally */
@@ -896,10 +915,18 @@ textarea:focus {
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .hero-actions .btn {
     width: 100%;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+  }
+
+  /* Ghost button more visible on dark mobile bg */
+  .hero-actions .btn-ghost {
+    border-color: rgba(255, 255, 255, 0.28);
   }
 
   .hero-scroll {
@@ -913,21 +940,15 @@ textarea:focus {
     right: -40px;
   }
 
-  .hero-glow--gold {
-    width: 160px;
-    height: 160px;
-    left: -30px;
-  }
-
   /* ── Services ── */
   .services-grid {
     grid-template-columns: 1fr;
-    margin-top: 28px;
-    gap: 12px;
+    margin-top: 32px;
+    gap: 10px;
   }
 
   .service-card {
-    padding: 24px 20px;
+    padding: 22px 18px;
   }
 
   .service-card--wide {
@@ -935,9 +956,13 @@ textarea:focus {
   }
 
   .service-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 16px;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 14px;
+  }
+
+  .service-title {
+    font-size: 1.05rem;
   }
 
   /* ── About ── */
